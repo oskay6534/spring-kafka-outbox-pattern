@@ -1,0 +1,80 @@
+# ============================
+# Maven
+# ============================
+
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+
+# ============================
+# IntelliJ IDEA
+# ============================
+
+.idea/
+*.iws
+*.iml
+*.ipr
+
+
+# ============================
+# Visual Studio Code
+# ============================
+
+.vscode/
+
+
+# ============================
+# Eclipse / STS
+# ============================
+
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+.apt_generated
+.factorypath
+
+
+# ============================
+# İşletim Sistemi Dosyaları
+# ============================
+
+.DS_Store
+Thumbs.db
+
+
+# ============================
+# Environment / Gizli Bilgiler
+# ============================
+
+.env
+.env.*
+!.env.example
+
+
+# ============================
+# Log Dosyaları
+# ============================
+
+*.log
+logs/
+
+
+# ============================
+# Geçici Dosyalar
+# ============================
+
+*.tmp
+*.temp
+*.swp
+*~
+
+
+# ============================
+# Java
+# ============================
+
+*.class
+hs_err_pid*
+replay_pid*
