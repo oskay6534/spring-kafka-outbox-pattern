@@ -1,5 +1,7 @@
 package org.oskay.springkafka.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.oskay.springkafka.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,6 +9,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/orders")
+@Tag(name = "Orders", description = "Sipariş oluşturma işlemleri")
 public class OrderController {
 
     private final OrderService orderService;
@@ -16,6 +19,7 @@ public class OrderController {
     }
 
     @PostMapping
+    @Operation(summary = "Sipariş oluşturur ve outbox event kaydı ekler")
     public String createOrder() {
 
         Long orderId = orderService.createOrder(

@@ -8,13 +8,13 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/kafka_db
 spring.datasource.username=${DB_USERNAME:postgres}
 spring.datasource.password=${DB_PASSWORD}
 
-# Entity de?i?ikliklerine gÃ¶re tablolar? gÃ¼nceller
+# Entity de?i?ikliklerine göre tablolar? günceller
 spring.jpa.hibernate.ddl-auto=update
 
-# Hibernate taraf?ndan Ã§al??t?r?lan SQL sorgular?n? gÃ¶sterir
+# Hibernate taraf?ndan çal??t?r?lan SQL sorgular?n? gösterir
 spring.jpa.show-sql=true
 
-# SQL sorgular?n? daha okunabilir biÃ§imde gÃ¶sterir
+# SQL sorgular?n? daha okunabilir biçimde gösterir
 spring.jpa.properties.hibernate.format_sql=true
 
 
@@ -29,10 +29,10 @@ spring.kafka.bootstrap-servers=localhost:9092
 # Producer Yap?land?rmas?
 # ============================
 
-# Mesaj anahtar?n? (Key) String -> byte[] format?na Ã§evirir
+# Mesaj anahtar?n? (Key) String -> byte[] format?na çevirir
 spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
 
-# Outbox payload zaten JSON String oldu?u iÃ§in StringSerializer kullan?yoruz
+# Outbox payload zaten JSON String oldu?u için StringSerializer kullan?yoruz
 spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
 
 # Producer retry durumlar?nda ayn? mesaj?n Kafka'ya iki kez yaz?lmas?n? engellemeye yard?mc? olur
@@ -49,17 +49,17 @@ spring.kafka.producer.acks=all
 # Consumer'?n dahil oldu?u Consumer Group
 spring.kafka.consumer.group-id=order-group
 
-# GeÃ§erli commit edilmi? offset yoksa mevcut en eski mesajdan okumaya ba?lar
+# Geçerli commit edilmi? offset yoksa mevcut en eski mesajdan okumaya ba?lar
 spring.kafka.consumer.auto-offset-reset=earliest
 
-# Mesaj anahtar?n? byte[] -> String format?na Ã§evirir
+# Mesaj anahtar?n? byte[] -> String format?na çevirir
 spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
-# Kafka'dan gelen JSON verisini Java nesnesine Ã§evirir
+# Kafka'dan gelen JSON verisini Java nesnesine çevirir
 spring.kafka.consumer.value-deserializer=org.springframework.kafka.support.serializer.JacksonJsonDeserializer
 
-# JSON deserialization s?ras?nda gÃ¼venilen Java paketleri
+# JSON deserialization s?ras?nda güvenilen Java paketleri
 spring.kafka.consumer.properties.spring.json.trusted.packages=org.oskay.springkafka.event
 
-# Gelen JSON'un varsay?lan olarak hangi Java s?n?f?na dÃ¶nÃ¼?tÃ¼rÃ¼lece?ini belirtir
+# Gelen JSON'un varsay?lan olarak hangi Java s?n?f?na dönü?türülece?ini belirtir
 spring.kafka.consumer.properties.spring.json.value.default.type=org.oskay.springkafka.event.OrderCreatedEvent
